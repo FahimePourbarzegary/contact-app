@@ -18,7 +18,12 @@ const ContactList = ({ contacts, deleteContactHandler }) => {
               <p>{c.email}</p>
             </div>
           </div>
-          <button onClick={() => deleteContactHandler(c.id)}>delete</button>
+          <div className="contact__desc">
+            <Link to={ `user/${c.id}`} state={{name:c.name,id:c.id,email:c.email}}>
+              <button>detail</button>
+            </Link>
+            <button onClick={() => deleteContactHandler(c.id)}>delete</button>
+          </div>
         </div>
       ))}
     </section>

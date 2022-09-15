@@ -5,11 +5,12 @@ img {
 .contact {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   padding: 0.5rem 4rem;
 }
 .contact__desc {
   display: flex;
+  align-items: flex-end;
 }
 .contact-list__add {
   display: flex;
