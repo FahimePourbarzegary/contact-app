@@ -9,7 +9,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-   width: 20rem;
+  width: 20rem;
 }
 input {
   height: 2rem;
@@ -36,6 +36,3 @@ button {
 button:hover {
   background-color: #0e7490;
 }
-form{
-   
-  }

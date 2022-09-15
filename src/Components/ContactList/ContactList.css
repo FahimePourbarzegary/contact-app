@@ -6,8 +6,15 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0.5rem 4rem;
 }
 .contact__desc {
   display: flex;
+}
+.contact-list__add {
+  display: flex;
+  justify-content: center;
+}
+.contact-list__add-btn {
+  width: 10rem;
 }
