@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import ContactForm from "./Components/ContactForm/ContactForm";
 import ContactList from "./Components/ContactList/ContactList";
@@ -11,6 +11,16 @@ function App() {
       { id: Math.ceil(Math.random() * 100), ...contact },
     ]);
   };
+ 
+  useEffect(() => {
+    const savedContacts = JSON.parse(localStorage.getItem("contacts"));
+    console.log(savedContacts);
+    if (savedContacts) setContacts(savedContacts);
+  },[]);
+ useEffect(() => {
+   localStorage.setItem("contacts", JSON.stringify(contacts));
+ }, [contacts]);
+
   const deleteContactHandler = (id) => {
     const filteredItem = contacts.filter((c) => c.id !== id);
     setContacts(filteredItem);
