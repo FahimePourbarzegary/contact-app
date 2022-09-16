@@ -11,14 +11,11 @@ img {
 .contact__desc {
   display: flex;
   align-items: flex-end;
-
 }
 .contact-list__add {
   display: flex;
   justify-content: center;
-  
 }
 .contact-list__add-btn {
   width: 10rem;
-  
 }
