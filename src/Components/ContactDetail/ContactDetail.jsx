@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import "./ContactDetail.css";
-const ContactDetail = (props) => {
+const ContactDetail = () => {
   const location = useLocation();
   return (
     <section className="container contact-detail">

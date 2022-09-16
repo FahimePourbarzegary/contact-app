@@ -2,8 +2,19 @@
     display: flex;
     height: 20rem;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items:center;
     padding: 5rem;
+    
+}
+.contact-detail p{
+background-color:#0891b2 ;
+    color: white;
+     padding: 0.5rem;
+     height: 2rem;
+     border-radius: 10px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
 
 }

@@ -23,11 +23,11 @@ input:focus {
   border: 3px solid #0e7490;
 }
 button {
-  width: 5rem;
+  width: 4rem;
   border: 0;
   background-color: #0891b2;
   padding: 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   color: white;
   font-weight: 600;
   margin-top: 1rem;
