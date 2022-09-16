@@ -7,16 +7,20 @@ import ContactDetail from "./Components/ContactDetail/ContactDetail";
 import ContactEdit from "./Components/ContactEdit/ContactEdit";
 function App() {
   const [contacts, setContacts] = useState([]);
+  const [cloneContact, setCloneContact] = useState([]);
+
   const addContactHandler = (contact) => {
-    setContacts([
-      ...contacts,
-      { id: Math.ceil(Math.random() * 100), ...contact },
-    ]);
+    const data = { id: Math.ceil(Math.random() * 100), ...contact };
+    setContacts([...contacts, data]);
+    setCloneContact([...contacts, data]);
   };
 
   useEffect(() => {
     const savedContacts = JSON.parse(localStorage.getItem("contacts"));
-    if (savedContacts) setContacts(savedContacts);
+    if (savedContacts) {
+      setContacts(savedContacts);
+      setCloneContact(savedContacts);
+    }
   }, []);
   useEffect(() => {
     localStorage.setItem("contacts", JSON.stringify(contacts));
@@ -25,16 +29,30 @@ function App() {
   const deleteContactHandler = (id) => {
     const filteredItem = contacts.filter((c) => c.id !== id);
     setContacts(filteredItem);
+    setCloneContact(filteredItem);
   };
   const editContactHandler = (contact) => {
     const index = contacts.findIndex((c) => c.id === contact.id);
-    console.log({ ...contacts[index] });
     const newContact = { ...contacts[index] };
     newContact.name = contact.name;
     newContact.email = contact.email;
     const updateContacts = [...contacts];
     updateContacts[index] = newContact;
     setContacts(updateContacts);
+    setCloneContact(updateContacts);
+  };
+  const searchContactHandler = (search) => {
+    if (search !== "") {
+      const filterdContact = cloneContact.filter((c) => {
+        return Object.values(c)
+          .join(" ")
+          .toLowerCase()
+          .includes(search.toLowerCase());
+      });
+      setContacts(filterdContact);
+    } else {
+      setContacts(cloneContact);
+    }
   };
   return (
     <div className="container">
@@ -56,6 +74,7 @@ function App() {
             <ContactList
               contacts={contacts}
               deleteContactHandler={deleteContactHandler}
+              searchContactHandler={searchContactHandler}
             />
           }
         />

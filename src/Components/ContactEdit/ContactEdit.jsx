@@ -4,7 +4,11 @@ import { useLocation, useNavigate } from "react-router-dom";
 const ContactEdit = ({ editContactHandler }) => {
   const location = useLocation();
   let navigate = useNavigate();
-  const [contact, setContact] = useState({id:location.state.id, name: location.state.name, email:location.state.email });
+  const [contact, setContact] = useState({
+    id: location.state.id,
+    name: location.state.name,
+    email: location.state.email,
+  });
   const onChangeHandler = (e) => {
     setContact({ ...contact, [e.target.name]: e.target.value });
     console.log(contact);
@@ -46,5 +50,5 @@ const ContactEdit = ({ editContactHandler }) => {
     </section>
   );
 };
- 
+
 export default ContactEdit;

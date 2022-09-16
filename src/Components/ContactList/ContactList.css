@@ -6,11 +6,18 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 0.5rem 4rem;
+  width: 25rem;
+  padding: 0.5rem 1rem;
 }
 .contact__desc {
   display: flex;
   align-items: flex-end;
+}
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .contact-list__add {
   display: flex;
